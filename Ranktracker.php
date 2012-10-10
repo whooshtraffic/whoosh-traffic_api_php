@@ -120,14 +120,4 @@ class Ranktracker extends Whooshtraffic
                 return $result[0];
         }
     }
-    
-    private function decode_result($result)
-    {
-        if($this->response_mime == 'json')
-        {
-            return json_decode($result, True);
-        } else {
-            return new SimpleXMLElement($result);
-        }
-    }
 }
