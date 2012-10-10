@@ -30,6 +30,16 @@ class Whooshtraffic
         $this->response_mime = $response_mime;
     }
     
+    protected function decode_result($result)
+    {
+        if($this->response_mime == 'json')
+        {
+            return json_decode($result, True);
+        } else {
+            return new SimpleXMLElement($result);
+        }
+    }
+    
     /**
      * Private method for building the RESTful api calls, making them,
      * and returning the results to the caller.
