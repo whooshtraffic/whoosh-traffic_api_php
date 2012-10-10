@@ -5,9 +5,9 @@
 
 require_once('Whooshtraffic.php');
 
-class Ranktracker extends Whooshtraffic
+class KeywordResearch extends Whooshtraffic
 {
-    private $api = 'ranktracker';
+    private $api = 'keyword_research';
     
     public function fetch($keywords)
     {
