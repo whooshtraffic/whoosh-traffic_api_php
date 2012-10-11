@@ -11,7 +11,7 @@ class KeywordResearch extends Whooshtraffic
     
     public function fetch($keywords)
     {
-        $data = http_build_query(array("keywords" => $keywords));
+        $data = array("keywords" => $keywords);
         
         $result = $this->rest_call($this->api, Null, Null, Null, 'POST', $data);
         return $this->decode_result($result[0]);
