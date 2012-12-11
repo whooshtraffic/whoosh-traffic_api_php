@@ -10,6 +10,13 @@ class Ranktracker extends Whooshtraffic
     private $api = 'ranktracker';
     private $seg = 'pairs';
     
+    public function get_quota()
+    {
+        $result = $this->rest_call($this->api, $this->seg, 'quota');
+        
+        return $this->decode_result($result[0]);
+    }
+    
     public function get_all($type=Null)
     {
         if(in_array($type, array('ranked', 'unranked')))
